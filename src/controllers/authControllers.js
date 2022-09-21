@@ -3,10 +3,6 @@ import { validationResult } from "express-validator";
 
 // register users
 export const register = async (req, res) => {
-  // validations
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) return res.json({ errors: errors.array() });
-
   const { first_name, last_name, email, password } = req.body;
 
   try {
